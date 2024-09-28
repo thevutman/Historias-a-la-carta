@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Download, Book } from 'lucide-react'
+import { Book } from 'lucide-react'
 
 function recetario() {
   return (
