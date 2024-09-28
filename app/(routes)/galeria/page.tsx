@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useCallback } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import pic1 from '../../../public/11.jpg'
@@ -53,8 +54,20 @@ const GallerySection: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="px-12 flex items-center justify-between h-16 bg-opacity-80 backdrop-blur-md shadow-md">
+            <div className="flex items-center">
+              <Link href={"/"} className='font-semibold text-2xl'>Historias a la Carta</Link>
+            </div>
+            <div>
+              <Link href={"/"} className='font-medium text-lg'>Inicio</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-100 mb-8">Galería de Imágenes</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-100 mt-8 mb-8">Galería de Imágenes</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((image, index) =>(
             <div key={index} className='relative aspect-w-3 aspect-h-2 h-52 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105'>
