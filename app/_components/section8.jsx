@@ -41,7 +41,7 @@ export default function Section8() {
         trigger: section,
         start: 'top center',
         end: 'bottom bottom',
-        markers: true,
+        markers: false,
         scrub: false,
         toggleActions: 'play none none reverse',
       },

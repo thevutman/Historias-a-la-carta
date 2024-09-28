@@ -19,31 +19,27 @@ export default function Section1() {
     const paragraph = paragraphRef.current
 
     gsap.to(image, {
-      scale: 1,
-      rotation: 0,
-      opacity: 1,
-      duration: 1,
+      x: 50,
+      y: 50,
+      scale: 1.1,
       scrollTrigger: {
         trigger: section,
-        markers: false,
         start: 'top center',
-        end: 'bottom, bottom',
-        scrub: false,
-        toggleActions: 'play none none reverse',
+        end: 'bottom bottom',
+        scrub: true,
+        toggleActions: 'play none none none',
       },
     })
 
     gsap.to(paragraph, {
       y: 50,
       opacity: 1,
-      duration: 1,
       scrollTrigger: {
         trigger: section,
         start: 'top center',
         end: 'bottom bottom',
-        markers: true,
-        scrub: false,
-        toggleActions: 'play none none reverse',
+        scrub: true,
+        toggleActions: 'play none none none',
       },
     })
 
@@ -69,7 +65,7 @@ export default function Section1() {
               alt="Enhanced Image"
               layout="fill"
               objectFit="cover"
-              className="opacity-0"
+              className=" scale-80"
             />
           </div>
         </div>
