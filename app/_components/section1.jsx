@@ -1,20 +1,79 @@
-import React from 'react'
-import Image from 'next/image'
-import img1 from '../../public/1.jpg'
+'use client'
 
-function section1() {
+import React, { useEffect, useRef } from 'react'
+import Image from 'next/image'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import picture from '../../public/1.svg'
+
+gsap.registerPlugin(ScrollTrigger)
+
+export default function section1() {
+  const sectionRef = useRef(null)
+  const imageRef = useRef(null)
+  const paragraphRef = useRef(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    const image = imageRef.current
+    const paragraph = paragraphRef.current
+
+    gsap.to(image, {
+      scale: 1,
+      rotation: 0,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: section,
+        markers: false,
+        start: 'top center',
+        end: 'bottom, bottom',
+        scrub: false,
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    gsap.to(paragraph, {
+      y: 50,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: section,
+        start: 'top center',
+        end: 'bottom bottom',
+        markers: true,
+        scrub: false,
+        toggleActions: 'play none none reverse',
+      },
+    })
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [])
+
   return (
-    <div className='h-screen grid place-items-center'>
-        <div className="flex flex-col justify-center items-center gap-12 p-6 w-full lg:flex-row lg:justify-evenly max-w-screen-xl">
-          <div className="">
-              <p className='text-base md:text-lg'>Los Nutabes, tribus originarias de la región de lo que hoy es Santa Fe de Antioquia, basaban su alimentación en productos autóctonos como el maíz, la yuca, la batata, los frijoles y diversas frutas como el aguacate y el guanábano. Estas frutas se consumían crudas, mientras que los tubérculos se hervían y las proteínas se obtenían principalmente de animales silvestres y peces capturados en los ríos cercanos. La preparación de estos alimentos se realizaba al aire libre, cocinados en fogones. Las técnicas de cocción utilizadas por los Nutabes eran sencillas, como el asado directo al fuego, mientras que las vasijas de barro eran fundamentales para hervir los alimentos. Entre los platos destacados de esta época se encontraban las arepas de maíz simples, tubérculos hervidos y frutas crudas.</p>
-          </div>
-          <div className="">
-              <Image src={img1} className='max-w-3xl'></Image>
+    <div ref={sectionRef} className="h-screen flex items-center justify-center">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        <div className="md:w-3/6 mb-8 md:mb-0">
+          <h2 className="text-4xl font-bold text-stone-900 mb-4">Los Nutabes, </h2>
+          <p ref={paragraphRef} className="text-xl text-stone-900 opacity-0">
+          tribus originarias de la región de lo que hoy es Santa Fe de Antioquia, basaban su alimentación en productos autóctonos como el maíz, la yuca, la batata, los frijoles y diversas frutas como el aguacate y el guanábano. Estas frutas se consumían crudas, mientras que los tubérculos se hervían y las proteínas se obtenían principalmente de animales silvestres y peces capturados en los ríos cercanos. La preparación de estos alimentos se realizaba al aire libre, cocinados en fogones. Las técnicas de cocción utilizadas por los Nutabes eran sencillas, como el asado directo al fuego, mientras que las vasijas de barro eran fundamentales para hervir los alimentos. Entre los platos destacados de esta época se encontraban las arepas de maíz simples, tubérculos hervidos y frutas crudas.
+          </p>
+        </div>
+        <div className="md:w-3/6 flex justify-center">
+          <div className="relative w-5/6 h-80">
+            <Image
+              ref={imageRef}
+              src={picture}
+              alt="Enhanced Image"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-0"
+            />
           </div>
         </div>
+      </div>
     </div>
   )
 }
-
-export default section1
