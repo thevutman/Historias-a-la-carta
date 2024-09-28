@@ -56,7 +56,7 @@ export default function EnhancedImageSection() {
         </div>
         <div className="md:w-3/6 flex justify-center">
           <div className="relative w-5/6">
-            <Image src={picture1} className=''></Image>
+            <Image src={picture1} className='' alt='hola'></Image>
           </div>
         </div>
       </div>
