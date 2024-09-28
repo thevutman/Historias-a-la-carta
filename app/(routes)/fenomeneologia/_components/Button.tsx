@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Download } from "lucide-react"
 
 interface PDFDownloadButtonProps {
-  pdfUrl: "../../../../public/download.pdf"
-  fileName: "download.pdf"
+  pdfUrl: "https://drive.google.com/uc?id=1o8aHbswX_RLgpt01eVVl0yzpvW3ktj1j&export=download"
+  fileName: "fenomenologia.pdf"
 }
 
 export default function PDFDownloadButton({ pdfUrl, fileName }: PDFDownloadButtonProps) {
@@ -19,8 +19,8 @@ export default function PDFDownloadButton({ pdfUrl, fileName }: PDFDownloadButto
       const blob = await response.blob()
       const url = window.URL.createObjectURL(blob)
       const link = document.createElement('a')
-      link.href = url
-      link.download = fileName
+      link.href = "https://drive.google.com/uc?id=1o8aHbswX_RLgpt01eVVl0yzpvW3ktj1j&export=download"
+      link.download = "Fenomenologia"
       document.body.appendChild(link)
       link.click()
       link.parentNode?.removeChild(link)

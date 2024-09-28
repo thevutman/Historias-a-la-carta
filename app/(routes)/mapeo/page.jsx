@@ -1,5 +1,7 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
 import vista from '../../../public/VISTA.jpg'
@@ -7,13 +9,53 @@ import opcional from '../../../public/OPCIONAL.jpg'
 import olor from '../../../public/OLOR.jpg'
 import tacto from '../../../public/TACTO.jpg'
 import tacto2 from '../../../public/TACTO2.jpg'
+import pic1 from '../../../public/cartografia/1.png'
+import pic4 from '../../../public/cartografia/4.png'
+import pic5 from '../../../public/cartografia/5.png'
+import pic6 from '../../../public/cartografia/6.png'
+import pic7 from '../../../public/cartografia/7.png'
+import pic8 from '../../../public/cartografia/8.png'
+import pic9 from '../../../public/cartografia/9.png'
+import pic10 from '../../../public/cartografia/10.png'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function Mapeo() {
+  const scrollRef = useRef(null)
+  const navBarRef = useRef(null)
+
+  useEffect(() => {
+    const scroll = scrollRef.current
+    const navBar = navBarRef.current
+
+    gsap.to(navBar, {
+      color: 'black',
+      scrollTrigger: {
+        trigger: scroll,
+        start: 'top top',
+        end: 'bottom 0',
+        markers: false,
+        toggleActions: 'play pause resume reset',
+        onEnter: () => {
+          gsap.to(navBar, { color: 'black' })
+        },
+        onLeave: () => {
+          gsap.to(navBar, { color: 'white' })
+        }
+      }
+    })
+
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [])
+
   return (
     <div className='bg-gradient-to-r from-gray-950 to-stone-950'>
       <nav className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 bg-opacity-80 backdrop-blur-md shadow-md">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={navBarRef} className="px-12 flex items-center justify-between h-16 bg-opacity-80 backdrop-blur-md shadow-md">
             <div className="flex items-center">
               <Link href={"/"} className='font-semibold text-2xl'>Historias a la Carta</Link>
             </div>
@@ -87,8 +129,32 @@ function Mapeo() {
               </p>
             </div>
         </div>
-        <div className="">
-            <p>imagenes caertografia</p>
+        <div ref={scrollRef} className="flex flex-col bg-[#fff3e9] justify-center items-center p-28">
+            <h2 className='text-4xl font-bold text-stone-950'>Mapa del lugar</h2>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic1}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic4}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic5}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic6}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic7}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic8}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic9}></Image>
+            </div>
+            <div className='p-14 max-w-7xl'>
+              <Image src={pic10}></Image>
+            </div>
         </div>
     </div>
   )

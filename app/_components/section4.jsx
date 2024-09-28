@@ -56,7 +56,7 @@ export default function EnhancedImageSection() {
       y: 50,
       scale: 1.1,
       scrollTrigger: {
-        trigger: section2,
+        trigger: section,
         start: 'top center',
         end: 'bottom bottom',
         markers: false,
@@ -69,7 +69,7 @@ export default function EnhancedImageSection() {
       y: 50,
       opacity: 1,
       scrollTrigger: {
-        trigger: section2,
+        trigger: paragraph2,
         start: 'top center',
         end: 'bottom bottom',
         markers: false,
@@ -92,7 +92,7 @@ export default function EnhancedImageSection() {
         </div>
         <div className="md:w-3/6 flex justify-center">
           <div className="relative w-5/6">
-            <Image ref={imageRef} src={picture1} className='' alt='hola'></Image>
+            <Image ref={image2Ref} src={picture1} className='' alt='hola'></Image>
           </div>
         </div>
       </div>
