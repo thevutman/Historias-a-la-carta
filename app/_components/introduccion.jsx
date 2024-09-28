@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Introduccion() {
+function introduccion() {
   return (
     <div className='h-screen grid place-items-center'>
         <div className="p-6 max-w-screen-sm">
@@ -12,4 +12,4 @@ function Introduccion() {
 
 introduccion.displayName = 'Header'
 
-export default Introduccion
+export default introduccion
