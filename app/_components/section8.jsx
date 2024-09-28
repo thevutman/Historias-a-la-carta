@@ -8,7 +8,7 @@ import picture from '../../public/10.svg'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function section8() {
+export default function Section8() {
   const sectionRef = useRef(null)
   const imageRef = useRef(null)
   const paragraphRef = useRef(null)
