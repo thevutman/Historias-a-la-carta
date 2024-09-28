@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-function seccionario() {
+function Seccionario() {
   return (
     <div className='h-screen grid place-items-center'>
         <div className="flex flex-col md:flex-row gap-3">
@@ -15,4 +15,4 @@ function seccionario() {
   )
 }
 
-export default seccionario
+export default Seccionario

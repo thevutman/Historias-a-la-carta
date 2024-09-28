@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import Hero from "./_components/hero"
 import Introduccion from "./_components/introduccion"
 import Seccionario from "./_components/seccionario"
@@ -15,7 +14,6 @@ import Section5 from "./_components/section5"
 import Section6 from "./_components/section6"
 import Section7 from "./_components/section7"
 import Section8 from "./_components/section8"
-import Navbar from "./_components/navbar"
 import Color from "./_components/color"
 
 gsap.registerPlugin(ScrollTrigger)

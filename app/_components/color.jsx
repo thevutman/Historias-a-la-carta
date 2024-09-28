@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function color({children}) {
+export default function Color({children}) {
   const sectionRef = useRef(null)
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,10 +9,6 @@ import picture1 from '../../public/8.svg'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function EnhancedImageSection() {
-  const sectionRef = useRef(null)
-  const imageRef = useRef(null)
-  const paragraphRef = useRef(null)
-
   // useEffect(() => {
   //   const section = sectionRef.current
   //   const image = imageRef.current

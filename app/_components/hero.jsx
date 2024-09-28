@@ -1,6 +1,6 @@
 import React from "react"
 
-function hero() {
+function Hero() {
 
     return (
         <div className="h-screen grid place-items-center">
@@ -11,4 +11,4 @@ function hero() {
     )
 }
 
-export default hero
+export default Hero
