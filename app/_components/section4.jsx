@@ -13,7 +13,7 @@ export default function EnhancedImageSection() {
   const sectionRef = useRef(null)
   const imageRef = useRef(null)
   const paragraphRef = useRef(null)
-  const section2Ref = useRef(null)
+  // const section2Ref = useRef(null)
   const image2Ref = useRef(null)
   const paragraph2Ref = useRef(null)
 
@@ -21,7 +21,7 @@ export default function EnhancedImageSection() {
     const section = sectionRef.current
     const image = imageRef.current
     const paragraph = paragraphRef.current
-    const section2 = section2Ref.current
+    // const section2 = section2Ref.current
     const image2 = image2Ref.current
     const paragraph2 = paragraph2Ref.current
 

@@ -132,28 +132,28 @@ function Mapeo() {
         <div ref={scrollRef} className="flex flex-col bg-[#fff3e9] justify-center items-center p-28">
             <h2 className='text-4xl font-bold text-stone-950'>Mapa del lugar</h2>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic1}></Image>
+              <Image src={pic1} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic4}></Image>
+              <Image src={pic4} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic5}></Image>
+              <Image src={pic5} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic6}></Image>
+              <Image src={pic6} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic7}></Image>
+              <Image src={pic7} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic8}></Image>
+              <Image src={pic8} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic9}></Image>
+              <Image src={pic9} alt=''></Image>
             </div>
             <div className='p-14 max-w-7xl'>
-              <Image src={pic10}></Image>
+              <Image src={pic10} alt=''></Image>
             </div>
         </div>
     </div>

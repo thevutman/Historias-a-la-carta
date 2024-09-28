@@ -6,10 +6,10 @@ import { Download } from "lucide-react"
 
 interface PDFDownloadButtonProps {
   pdfUrl: "https://drive.google.com/uc?id=1o8aHbswX_RLgpt01eVVl0yzpvW3ktj1j&export=download"
-  fileName: "fenomenologia.pdf"
+  // fileName: "fenomenologia.pdf"s
 }
 
-export default function PDFDownloadButton({ pdfUrl, fileName }: PDFDownloadButtonProps) {
+export default function PDFDownloadButton({ pdfUrl }: PDFDownloadButtonProps) {
   const [isDownloading, setIsDownloading] = useState(false)
 
   const handleDownload = async () => {
