@@ -88,7 +88,7 @@ export default function EnhancedImageSection() {
       <div ref={sectionRef} className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between ">
         <div className="md:w-3/6 mb-8 md:mb-0 order-1">
           <h2 className="text-4xl font-bold text-stone-900 mb-4">En las décadas siguientes,</h2>
-          <p ref={paragraphRef} className='text-xl text-stone-900'>entre los años 1540 y 1560, los españoles comenzaron a cultivar caña de azúcar en la región. Este cultivo trajo consigo la producción de dos productos esenciales para la gastronomía local: la panela y el guarapo. La panela, un tipo de azúcar sin refinar, se utilizaba como endulzante en una amplia variedad de bebidas y postres. Por otro lado, el guarapo, una bebida alcohólica hecha a partir de la caña de azúcar, se convirtió en un elemento fundamental de la cultura gastronómica local.</p>
+          <p ref={paragraphRef} className='text-xl text-stone-900 opacity-0'>entre los años 1540 y 1560, los españoles comenzaron a cultivar caña de azúcar en la región. Este cultivo trajo consigo la producción de dos productos esenciales para la gastronomía local: la panela y el guarapo. La panela, un tipo de azúcar sin refinar, se utilizaba como endulzante en una amplia variedad de bebidas y postres. Por otro lado, el guarapo, una bebida alcohólica hecha a partir de la caña de azúcar, se convirtió en un elemento fundamental de la cultura gastronómica local.</p>
         </div>
         <div className="md:w-3/6 flex justify-center">
           <div className="relative w-5/6">

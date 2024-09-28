@@ -8,44 +8,6 @@ import picture1 from '../../public/8.svg'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function EnhancedImageSection() {
-  // useEffect(() => {
-  //   const section = sectionRef.current
-  //   const image = imageRef.current
-  //   const paragraph = paragraphRef.current
-
-  //   gsap.to(image, {
-  //     scale: 1,
-  //     rotation: 0,
-  //     opacity: 1,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: section,
-  //       markers: false,
-  //       start: 'top center',
-  //       end: 'bottom, bottom',
-  //       scrub: false,
-  //       toggleActions: 'play none none reverse',
-  //     },
-  //   })
-
-  //   gsap.to(paragraph, {
-  //     y: 50,
-  //     opacity: 1,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: section,
-  //       start: 'top center',
-  //       end: 'bottom bottom',
-  //       markers: true,
-  //       scrub: false,
-  //       toggleActions: 'play none none reverse',
-  //     },
-  //   })
-
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-  //   }
-  // }, [])
 
   return (
     <div className="flex flex-col items-center justify-center gap-20 bg-white text-stone-900">
