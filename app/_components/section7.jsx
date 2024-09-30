@@ -1,6 +1,8 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+// import React, { useEffect, useRef } from 'react'
+import React from 'react'
+
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,52 +11,52 @@ import picture from '../../public/9.svg'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function EnhancedImageSection() {
-  const sectionRef = useRef(null)
-  const imageRef = useRef(null)
-  const paragraphRef = useRef(null)
+  // const sectionRef = useRef(null)
+  // const imageRef = useRef(null)
+  // const paragraphRef = useRef(null)
 
-  useEffect(() => {
-    const section = sectionRef.current
-    const image = imageRef.current
-    const paragraph = paragraphRef.current
+  // useEffect(() => {
+  //   const section = sectionRef.current
+  //   const image = imageRef.current
+  //   const paragraph = paragraphRef.current
 
-    gsap.to(image, {
-      scale: 1,
-      rotation: 0,
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: section,
-        markers: false,
-        start: 'top center',
-        end: 'bottom, bottom',
-        scrub: false,
-        toggleActions: 'play none none reverse',
-      },
-    })
+  //   gsap.to(image, {
+  //     scale: 1,
+  //     rotation: 0,
+  //     opacity: 1,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: section,
+  //       markers: false,
+  //       start: 'top center',
+  //       end: 'bottom, bottom',
+  //       scrub: false,
+  //       toggleActions: 'play none none reverse',
+  //     },
+  //   })
 
-    gsap.to(paragraph, {
-      y: 50,
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: section,
-        start: 'top center',
-        end: 'bottom bottom',
-        markers: false,
-        scrub: false,
-        toggleActions: 'play none none reverse',
-      },
-    })
+  //   gsap.to(paragraph, {
+  //     y: 50,
+  //     opacity: 1,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: section,
+  //       start: 'top center',
+  //       end: 'bottom bottom',
+  //       markers: false,
+  //       scrub: false,
+  //       toggleActions: 'play none none reverse',
+  //     },
+  //   })
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-    }
-  }, [])
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+  //   }
+  // }, [])
 
   return (
-    <div ref={sectionRef} className="flex flex-col items-center justify-center bg-white">
-      <div className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+    <div className="flex flex-col items-center justify-center bg-white">
+      <div className="md:h-screen my-16 md:my-0 max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-center">
         <div className="md:w-3/6 mb-8 md:mb-0">
           <h2 className="text-4xl font-bold text-stone-900 mb-4">Década de 1900-1920</h2>
           <p className="text-xl text-center text-stone-900">
@@ -62,7 +64,7 @@ export default function EnhancedImageSection() {
           </p>
         </div>
       </div>
-      <div className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div className="md:h-screen my-16 md:my-0 max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-3/6 mb-8 md:mb-0">
           <h2 className="text-4xl font-bold text-stone-900 mb-4">Década de 1940 - Escasez Durante la Segunda Guerra Mundial</h2>
           <p className="text-xl text-stone-900">
@@ -70,18 +72,17 @@ export default function EnhancedImageSection() {
           </p>
         </div>
         <div className="md:w-3/6 flex justify-center">
-          <div className="relative w-5/6 h-80">
+          <div className="relative w-full">
             <Image
               src={picture}
               alt="Enhanced Image"
-              layout="fill"
               objectFit="cover"
-              className=""
+              className="w-[90vw]"
             />
           </div>
         </div>
       </div>
-      <div className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+      <div className="md:h-screen my-16 md:my-0 max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-center">
         <div className="md:w-3/6 mb-8 md:mb-0">
           <h2 className="text-4xl font-bold text-stone-900 mb-4">Décadas de 1950-1960 – Apertura al Turismo y Rescate de Platos Tradicionales</h2>
           <p className="text-xl text-center text-stone-900">
@@ -89,7 +90,7 @@ export default function EnhancedImageSection() {
           </p>
         </div>
       </div>
-      <div className="h-screen max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+      <div className="md:h-screen my-16 md:my-0 max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-center">
         <div className="md:w-3/6 mb-8 md:mb-0">
           <h2 className="text-4xl font-bold text-stone-900 mb-4">1970s-1980s – Primeros Festivales Gastronómicos</h2>
           <p className="text-xl text-center text-stone-900">
